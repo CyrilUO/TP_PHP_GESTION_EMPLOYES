@@ -1,6 +1,8 @@
 <?php
 include __DIR__ . '/config/connect_db.php';
 
+// Script permettant de mocker des utilisateurs fictifs, à exécuter une fois
+
 try {
     // Démarrer une transaction
     $bdd->beginTransaction();

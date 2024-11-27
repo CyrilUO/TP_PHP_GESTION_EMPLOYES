@@ -1,10 +1,13 @@
--- Export SQL for Employee Management Database
+-- Export SQL - Employee Management Database
 
--- Drop existing tables to avoid conflicts during import
-DROP TABLE IF EXISTS Employees;
-DROP TABLE IF EXISTS Departments;
+-- Créer la db
+CREATE DATABASE EmployeeDB
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
+-- Utiliser la base de données créée
+USE EmployeeDB;
 
--- Create table for Departments
+-- CREATION TABLE DEPARTEMENTS
 CREATE TABLE Departments (
                              id_department INT AUTO_INCREMENT PRIMARY KEY,
                              name VARCHAR(100) NOT NULL UNIQUE,
@@ -12,7 +15,7 @@ CREATE TABLE Departments (
                              updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- Create table for Employees
+-- CREATION TABLE EMPLOYES
 CREATE TABLE Employees (
                            id INT AUTO_INCREMENT PRIMARY KEY,
                            name VARCHAR(100) NOT NULL,
@@ -23,18 +26,18 @@ CREATE TABLE Employees (
                            FOREIGN KEY (department) REFERENCES Departments(id_department) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
--- Insert sample data into Departments
+-- MOCK DE DEPARTEMENTS FICTIFS
 INSERT INTO Departments (name) VALUES
-                                   ('Human Resources'),
+                                   ('HR'),
                                    ('Finance'),
-                                   ('IT'),
 
 
--- Insert sample data into Employees
+
+-- MOCK DEMPLOYEES FICTIFS
 INSERT INTO Employees (name, email, department) VALUES
                                                     ('Alice Smith', 'john@john.com', 1),
                                                     ('Bob Johnson', 'megan@megan.com', 2),
 
--- Query to display data
+-- CHECKER LES DONNEES
 SELECT * FROM Departments;
 SELECT * FROM Employees;
