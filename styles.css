@@ -1,0 +1,140 @@
+/* Style global pour rendre les pages modernes et élégantes */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #1d3557;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Boutons */
+button, a {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #457b9d;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1d3557;
+}
+
+a {
+    background-color: #f4a261;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #e76f51;
+}
+
+/* Formulaires */
+form {
+    background: #fff;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1d3557;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form input:focus, form select:focus {
+    border-color: #457b9d;
+    outline: none;
+    box-shadow: 0 0 3px rgba(69, 123, 157, 0.8);
+}
+
+/* Tableaux */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+}
+
+table th {
+    background-color: #1d3557;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f4f7fc;
+}
+
+table tr:hover {
+    background-color: #f1faee;
+}
+
+/* Alertes */
+.alert {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #a8dadc;
+    color: #1d3557;
+}
+
+.alert-danger {
+    background-color: #e63946;
+    color: #fff;
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav a {
+    margin: 0 10px;
+}
