@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . "/config/connect_db.php";
+include __DIR__ . '/../config/connect_db.php';
 
 // Vérification de l'ID
 if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
@@ -27,7 +27,7 @@ try {
     exit;
 }
 // Redirection vers la liste des employés
-header('Location: list_employees.php');
+header('Location: /../employee/list_employees.php');
 exit;
 
 ?>

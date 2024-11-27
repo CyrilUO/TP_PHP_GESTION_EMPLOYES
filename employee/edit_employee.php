@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/config/connect_db.php';
+include __DIR__ . '/../config/connect_db.php';
 
 if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
     $employeeId = (int)$_GET['id'];
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </ul>
         </div>
     <?php endif; ?>
-    <form action="edit_employee.php?id=<?= $employeeId ?>" method="post">
+    <form action="../employee/edit_employee.php?id=<?= $employeeId ?>" method="post">
         <label for="name">Nom complet :</label>
         <input type="text" id="name" name="name" value="<?= htmlspecialchars($employee['name']) ?>" required>
         <label for="email">Email :</label>
@@ -105,8 +105,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endforeach; ?>
         </select>
         <button type="submit">Enregistrer les modifications</button>
+        <p><a href="../employee/list_employees.php">Retour à la liste des employés</a></p>
+
     </form>
-    <p><a href="list_employees.php">Retour à la liste des employés</a></p>
 </main>
 </body>
 

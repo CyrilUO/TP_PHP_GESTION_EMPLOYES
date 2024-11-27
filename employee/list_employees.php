@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/config/connect_db.php';
+include __DIR__ . '/../config/connect_db.php';
 
 // Pagination : récupérer la page et calculer l'offset
 $page = isset($_GET['page']) && $_GET['page'] > 0 ? (int)$_GET['page'] : 1;

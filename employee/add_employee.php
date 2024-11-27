@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/config/config.php';
+include __DIR__ . '/../config/connect_db.php';
 
 $query = $bdd->query("SELECT id_department, name FROM Departments");
 $departments = $query->fetchAll();
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <h1 style="text-align: center;">Ajouter un Nouvel Employé</h1>
-<form action="add_employee.php" method="post">
+<form action="../employee/add_employee.php" method="post">
     <!-- Nom complet -->
     <label for="name">Nom complet :</label>
     <input type="text" id="name" name="name" required>
