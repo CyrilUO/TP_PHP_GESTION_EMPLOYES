@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . "/connect_db.php";
+include __DIR__ . "/config/connect_db.php";
 
 // Vérification de l'ID
 if (isset($_GET['id']) && ctype_digit($_GET['id'])) {

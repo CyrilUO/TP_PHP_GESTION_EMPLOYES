@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/employee/db.initialize.php';
+include __DIR__ . '/database/db.initialize.php';
 
 try {
     // Démarrer une transaction

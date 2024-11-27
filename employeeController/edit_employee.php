@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/connect_db.php';
+include __DIR__ . '/config/connect_db.php';
 
 if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
     $employeeId = (int)$_GET['id'];
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier un Employé</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
 <header>

@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/connect_db.php';
+include __DIR__ . '/config/connect_db.php';
 
 // Pagination : récupérer la page et calculer l'offset
 $page = isset($_GET['page']) && $_GET['page'] > 0 ? (int)$_GET['page'] : 1;
@@ -35,7 +35,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des Employés</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
 <header>
@@ -79,7 +79,7 @@ try {
         <?php if ($page < $totalPages): ?>
             <a href="list_employees.php?page=<?= $page + 1; ?>">Suivant</a>
         <?php endif; ?>
-        <a href="index.php">Menu Principal</a>
+        <a href="../public/index.php">Menu Principal</a>
     </nav>
 </main>
 </body>
