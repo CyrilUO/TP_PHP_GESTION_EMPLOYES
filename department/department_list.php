@@ -1,6 +1,9 @@
 <?php
 include __DIR__ . '/../config/connect_db.php';
 
+// Explication de la jointure : on joint les tables Departments et Employees (raw data de Departements mais si aucun employé n'y fait partie)
+// La jointure relie la clé primaire id_department (Departments) à la clef étrangère départment (Employees)
+// On regroupe les results par ID de départements
 try {
     $query = $bdd->query(
         "SELECT 

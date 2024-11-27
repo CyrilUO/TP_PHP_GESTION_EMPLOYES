@@ -1,15 +1,16 @@
-<?php
+<?
+// Constante magique utilisée, le simple include ne fonctionne pas
 include __DIR__ . '/../config/connect_db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $departmentName = trim($_POST['name']); // Récupérer le nom du département
+    $departmentName = trim($_POST['name']); // Récupérer le nom du département en supprimant les espaces avec la méthode trim()
 
-    // Valider les données
+    // Vérification des données entrantes
     $errors = [];
     if (empty($departmentName)) {
         $errors[] = "Le nom du département est obligatoire.";
-    } elseif (strlen($departmentName) > 20) { // Vérification de la longueur maximale
-        $errors[] = "Le nom du département ne doit pas dépasser 50 caractères.";
+    } elseif (strlen($departmentName) > 20) { // Vérification de compliance du département
+        $errors[] = "Le nom du département ne doit pas dépasser 20 caractère.";
     }
 
     // Si aucune erreur, insérer le département
@@ -57,14 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 <?php endif; ?>
 
-<!-- Formulaire pour ajouter un département -->
+<!-- Logique d'ajout de département -->
 <form action="add_department.php" method="post" style="text-align: center;">
     <label for="name">Nom du Département :</label>
     <input type="text" id="name" name="name" required>
     <br><br>
     <button type="submit">Ajouter le Département</button>
 
-<!-- Lien vers la liste des départements -->
 <p style="text-align: center;">
     <a href="department_list.php">Voir la liste des départements</a>
 </p>

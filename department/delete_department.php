@@ -5,12 +5,12 @@ include __DIR__ . '/../config/connect_db.php';
 if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
     $departmentId = (int)$_GET['id'];
 } else {
-    echo "<p class='alert alert-danger'>ID de département invalide.</p>";
+    echo "<p class='alert alert-danger'>ID de département invalid</p>";
     exit;
 }
 
 try {
-    // Vérification si le département contient des employés
+    // Vérification si le département contient des employés en matchant l'id du département sélectionné avec l'id en bdd
     $query = $bdd->prepare(
         "SELECT COUNT(*) FROM Employees WHERE department = :department_id"
     );
@@ -41,7 +41,7 @@ try {
         exit;
     }
 
-    // Suppression du département
+    // Suppression du département à l'id matchant avec celui de la bdd
     $deleteQuery = $bdd->prepare(
         "DELETE FROM Departments WHERE id_department = :id"
     );
@@ -70,10 +70,6 @@ try {
     echo "<p class='alert alert-danger'>Erreur lors de la suppression : " . $e->getMessage() . "</p>";
 }
 
-// Redirection vers la liste des départements
-header('Location: department_list.php');
 exit;
 ?>
 
-
-<p class='alert alert-success'>Le département avec l'ID ${departmentId} a été supprimé avec succès.</p>

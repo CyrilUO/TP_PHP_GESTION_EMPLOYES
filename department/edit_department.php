@@ -9,7 +9,7 @@ if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
     exit;
 }
 
-// Récupérer les informations du département
+// Récupérer les informations du département matchant avec l'id en bdd
 $query = $bdd->prepare(
     "SELECT id_department, name 
      FROM Departments 
@@ -23,7 +23,7 @@ if (!$department) {
     exit;
 }
 
-// Traitement du formulaire
+// Traitement du formulaire via la reqete POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
 
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "Le nom du département ne doit pas dépasser 50 caractères.";
     }
 
-    // Mise à jour des données si aucune erreur
+    // Mise à jour des données si aucune erreur UPDATE TABLE <nom table> + SET nom entré + CONDITION via Where
     if (empty($errors)) {
         try {
             $updateQuery = $bdd->prepare(
